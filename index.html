@@ -219,7 +219,7 @@
 
         <div class="flex items-center justify-between gap-2 mt-3">
           <p class="text-lg font-bold text-white"> R$  5,90</p>
-          <button class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="Coca Lata" data-price="5,90"  title="Adicionar ao carrinho">
+          <button type="button" class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="Coca Lata" data-price="5,90"  title="Adicionar ao carrinho">
             <i class="text-lg text-white fa fa-cart-plus"></i>
           </button>
         </div>
@@ -239,7 +239,7 @@
 
         <div class="flex items-center justify-between gap-2 mt-3">
           <p class="text-lg font-bold text-white"> R$  5,90</p>
-          <button class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="Guaraná Antartica" data-price="5,90"  title="Adicionar ao carrinho">
+          <button type="button" class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="Guaraná Antartica" data-price="5,90"  title="Adicionar ao carrinho">
             <i class="text-lg text-white fa fa-cart-plus"></i>
           </button>
         </div>
@@ -259,7 +259,7 @@
 
         <div class="flex items-center justify-between gap-2 mt-3">
           <p class="text-lg font-bold text-white"> R$  5,90</p>
-          <button class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="Refri Miranda" data-price="5,90"   title="Adicionar ao carrinho">
+          <button type="button" class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="Refri Miranda" data-price="5,90"   title="Adicionar ao carrinho">
             <i class="text-lg text-white fa fa-cart-plus"></i>
           </button>
         </div>
@@ -279,7 +279,7 @@
 
         <div class="flex items-center justify-between gap-2 mt-3">
           <p class="text-lg font-bold text-white"> R$  5,90</p>
-          <button class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="coca Zero" data-price="5,90"   title="Adicionar ao carrinho">
+          <button type="button" class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="coca Zero" data-price="5,90"   title="Adicionar ao carrinho">
             <i class="text-lg text-white fa fa-cart-plus"></i>
           </button>
         </div>
@@ -299,7 +299,7 @@
 
         <div class="flex items-center justify-between gap-2 mt-3">
           <p class="text-lg font-bold text-white"> R$  8,90</p>
-          <button class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="coca 1,5L" data-price="8,90"   title="Adicionar ao carrinho">
+          <button type="button" class="px-5 bg-gray-900 rounded add-to-cart-btn" data-name="coca 1,5L" data-price="8,90"   title="Adicionar ao carrinho">
             <i class="text-lg text-white fa fa-cart-plus"></i>
           </button>
         </div>
@@ -310,7 +310,7 @@
 
     <!--FOOTER-->
 <footer class="fixed bottom-0 z-40 flex items-center justify-center w-full py-3 bg-red-600">
-    <button class="flex items-center gap-2 font-bold text-white" id="cart-btn">
+    <button type="button" class="flex items-center gap-2 font-bold text-white" id="cart-btn">
         (<span id="cart-count">0</span>)
         Veja meu Carrinho
         <i class="text-lg text-white fa-solid fa-cart-shopping"></i>
@@ -319,13 +319,13 @@
 
 <!-- MODAL -->
 <div id="cart-modal" class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center flex">
-    <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[60%]">
+    <class class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[60%]">
 
         <h2 class="mb-2 text-2xl font-bold text-center"> Meu Carrinho </h2>
 
-        <div id="cart-items" class="flex flex-col justify-between mb-4 gap-3"> </div>
+        <div id="cart-items" class="flex flex-col justify-between mb-4 gap-3"></div>
             <p class="font-bold">
-                Total: <span id="cart-total">  R$  0,00</span>
+                Total: <span id="cart-total">R$  0,00</span>
             </p>
 
             <p class="mt-4 font-bold"> Endereço de Entrega:</p>
@@ -350,7 +350,7 @@
                     Finalizar Pedido
                 </button>
             </div>
-        </div>
+          </class>
 
     </div>
 </div>

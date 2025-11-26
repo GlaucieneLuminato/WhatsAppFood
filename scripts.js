@@ -66,11 +66,11 @@ function updateCartModal() {
     let total = 0;
 
     cart.forEach(item => {
-        const div = document.createElement("div");
+        const cartItemElement = document.createElement("div");
 
-        div.classList.add("flex", "items-center", "mb-4", "justify-between");
+        cartItemElement.classList.add("flex", "items-center", "mb-4", "justify-between");
 
-        div.innerHTML = `
+        cartItemElement.innerHTML = `
         <div class="flex items-center justify-between">
             <p class="font-medium">${item.name}</p>
             <p>Qtd: ${item.quantity}</p>
@@ -128,29 +128,57 @@ addressInput.addEventListener("input", function (event) {
     }
 });
 
-
 checkoutBtn.addEventListener("click", function () {
+    const addressInput = document.getElementById("address");
 
-    if (cart.length === 0) return;
-
-    if (addressInput.value === "") {
+    if (addressInput.value.trim() === "") {
         addressWarn.classList.remove("hidden");
-        addressInput.classList.add("border-red-500");
         return;
     }
 
-    const cartItems = cart.map(item => {
-        return `${item.name} (Qtd: ${item.quantity}) - R$${item.price}`;
-    }).join(" | ");
+    // PEGAR O TOTAL EXIBIDO NO MODAL
+    let totalValue = document
+        .getElementById("cart-total")
+        .textContent
+        .replace("R$", "")
+        .replace(",", ".")
+        .trim();
 
-    const message = encodeURIComponent(cartItems);
-    const phone = "+5521975122868";
+    totalValue = Number(totalValue);
 
-    window.open(`https://wa.me/${phone}?text=${message}%0AEndereço: ${addressInput.value}`, "_blank");
+    // EVITAR ERROS
+    if (isNaN(totalValue)) totalValue = 0;
 
+    // Montar mensagem
+    let message = "🍔 *NOVO PEDIDO*\n\n";
+
+    cart.forEach((item) => {
+        message += `• *${item.name}*\n`;
+        message += `   Quantidade: ${item.quantity}\n`;
+        message += `   Preço: R$ ${item.price.toFixed(2)}\n`;
+        message += `   Subtotal: R$ ${(item.quantity * item.price).toFixed(2)}\n\n`;
+    });
+
+    message += "------------------------------\n";
+    message += `🧾 *Total Geral:* R$ ${totalValue.toFixed(2)}\n`;
+    message += `📍 *Endereço:* ${addressInput.value}\n`;
+    message += "------------------------------\n\n";
+    message += "Obrigado pelo pedido! 😊";
+
+    // Número do WhatsApp
+    const phone = "5521975122868";
+
+    // URL do WhatsApp
+    const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    // Abrir WhatsApp
+    window.open(whatsappURL, "_blank");
+
+    // Limpar carrinho
     cart = [];
     updateCartModal();
 });
+
 
 
 function checkRestaurantOpen() {
