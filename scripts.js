@@ -66,11 +66,11 @@ function updateCartModal() {
     let total = 0;
 
     cart.forEach(item => {
-        const cartItemElement = document.createElement("div");
+        const div = document.createElement("div");
 
-        cartItemElement.classList.add("border-b", "pb-2", "mb-2");
+        div.classList.add("flex", "items-center", "mb-4", "justify-between");
 
-        cartItemElement.innerHTML = `
+        div.innerHTML = `
         <div class="flex items-center justify-between">
             <p class="font-medium">${item.name}</p>
             <p>Qtd: ${item.quantity}</p>
