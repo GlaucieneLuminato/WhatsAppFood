@@ -68,7 +68,7 @@ function updateCartModal() {
     cart.forEach(item => {
         const cartItemElement = document.createElement("div");
 
-        cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col");
+        cartItemElement.classList.add("border-b", "pb-2", "mb-2");
 
         cartItemElement.innerHTML = `
         <div class="flex items-center justify-between">
@@ -144,7 +144,7 @@ checkoutBtn.addEventListener("click", function () {
     }).join(" | ");
 
     const message = encodeURIComponent(cartItems);
-    const phone = "5521975122868";
+    const phone = "+5521975122868";
 
     window.open(`https://wa.me/${phone}?text=${message}%0AEndereço: ${addressInput.value}`, "_blank");
 
