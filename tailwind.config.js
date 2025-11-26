@@ -19,7 +19,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        "home": "url('/assets/bg.png')",
+        "home": "url('/whatsappfood/assets/bg.png')",
       },
     },
   },
