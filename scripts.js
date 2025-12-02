@@ -29,7 +29,7 @@ closeModalBtn.addEventListener("click", function () {
     cartModal.style.display = "none";
 });
 
-// Adicionar item ao carrinho
+
 menu.addEventListener("click", function (event) {
 
     const parentButton = event.target.closest(".add-to-cart-btn");
