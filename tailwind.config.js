@@ -19,7 +19,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        "home": "url('/assets/bg (2).png')",
+        "home": "url('/assets/bg02.jpg')",
       },
     },
   },
