@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-    background-color:#000000;
+    background-image:url('/assets/bg02.jpg');
 }
 
 .bg-custom{
